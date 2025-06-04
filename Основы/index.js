@@ -875,3 +875,71 @@ for (let i = 0; i < arr4.length; i++) {
     console.log(arr4[i]);
 }
 
+/*Необходимо с помощью цикла for вывести следующие 11 строк в консоль:
+0 – это ноль
+1 – нечетное число
+2 – четное число
+3 – нечетное число
+…
+10 – четное число
+*/
+for (let i = 0; i <= 10; i++) {
+    if (i % 2 != 0) {
+        console.log(`${i} - не четное число`);
+    } else if (i === 0) {
+        console.log(`${i} - это ноль`);
+    } else {
+        console.log(`${i} - четное число`);
+    }
+}
+
+/*Дан массив [1, 2, 3, 4, 5, 6, 7]
+Сделайте из этого массива следующий [1, 2, 3, 6, 7]*/
+const newArr = [1, 2, 3, 4, 5, 6, 7];
+newArr.splice(3, 2);
+console.log(newArr);
+
+/*Используя Math.random() вам необходимо генерировать цифры от 0 до 9, и создать массив состоящий из 5 таких элементов
+1. Рассчитать сумму элементов этого массива
+2. Найти минимальное число
+3. Найти есть ли в этом массиве число 3
+*/
+
+const arr6 = [getRandom(), getRandom(), getRandom(), getRandom(), getRandom(), getRandom()];
+const minArr = Math.min(...arr6);
+
+function getRandom(min, max) {
+    min = Math.ceil(0);
+    max = Math.floor(9);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const newSum = arr6.reduce(function (x, y) {
+    return x + y;
+}, 0);
+
+function findMin(arr6) {
+    return Math.min(arr6);
+}
+
+for (let i = 0; i < arr6.length; i++) {
+    if (arr6[i] === 3) {
+        console.log('В массиве есть: '+ arr6[i]);
+    }
+}
+
+
+console.log(arr6);
+console.log(`Сумма элементов массива: ${newSum}`);
+console.log(`Минимальное число: ${minArr}`);
+
+/*Необходимо вывести горку в консоль (используя цикл for), как показано на рисунке, только у вашей горки должно быть 20 рядов, а не 5:
+x
+xx
+xxx
+xxxx
+xxxxx
+*/
+for (let x = 'x'; x.length <= 20; x += 'x') {
+    console.log(x);
+}
