@@ -635,3 +635,243 @@ console.log(mult(8, 7));
 console.log(div(5, 7));
 
 //Циклы и массивы
+/*
+const number = Number(prompt('значение N'));
+let i = 1;
+while (i <= number) {
+    console.log(i++);
+}*/
+/*
+let pass = Number(prompt('введите пароль в числовом формате'));
+while (pass !== 123) {
+    pass = Number(prompt('введите пароль в числовом формате'));
+}*/
+/*
+let pass;
+do {
+    pass = Number(prompt('введите пароль в числовом формате'));
+} while (pass !== 123);*/
+/*
+const number = Number(prompt('введите число N'));
+
+for (let i = 1; i <= number; i++) {
+    console.log(i);
+}*/
+//2. Если нам требуется сначала что-то сделать, а потом уже реализовать проверку, то тут к
+//нам на помощь придёт do while
+//3. Если нас интересует счетчик или возможно потребуется считать что либо, то это
+//определённо for
+
+//Массив и его методы
+
+const students = ['Ivanov', 'Petrov','Sidorov'];
+const studentsPraticeTimes = [20, 135, 87];
+
+let fullPracticeTime = 0;
+for (let index = 0; index < students.length; index++) {
+fullPracticeTime = fullPracticeTime + studentsPraticeTimes[index];
+console.log(students[index], ' - practice time: ', studentsPraticeTimes[index]);
+}
+
+console.log('Full practice time: ', fullPracticeTime);
+
+const students2 = [];
+
+students2.push('Иванов');
+students2.push('Петров');
+students2.push('Сидоров');
+
+console.log(students2);
+//push
+const students3 = [];
+
+students3.push('Иванов', 'Петров', 'Сидоров');
+console.log(students3);
+//pop
+const students4 = ['Иванов', 'Петров', 'Сидоров'];
+
+const lastStudents4 = students4.pop();
+console.log(lastStudents4);
+console.log(students4);
+//shift
+const students5 = ['Иванов', 'Петров', 'Сидоров'];
+
+const firstStudents = students5.shift();
+console.log(firstStudents);
+console.log(students5);
+//slice
+const newStudents = ['Иванов', 'Петров', 'Сидоров'];
+
+const newStudents2 = newStudents.slice();
+newStudents2.push('Белкин');
+
+console.log(newStudents);
+console.log(newStudents2);
+
+const firstTwoStudents = newStudents2.slice(0, 2);
+console.log(firstTwoStudents);
+
+//indexOf
+
+const newStudents3 = ["Ivanov", "Petrov", "Sidorov", "Alexandrov", "Belkin", "Avdeev"];
+
+if (newStudents3.indexOf('Ivanov') !== -1) {
+    console.log('среди студентов есть Иванов');
+}
+
+const indexOfBelkin = newStudents3.indexOf('Belkin');
+console.log(indexOfBelkin);
+
+
+const products = ['Кофта', 'Куртка', 'Футболка', 'Брюки'];
+console.log('Список всех товаров:');
+for (let i = 0; i < products.length; i++) {
+    console.log(products[i]);
+}
+
+function delProduct() {
+    products.pop();
+    console.log('список товаров после нажатия на кнопку');
+    for (let i = 0; i < products.length; i++) {
+        console.log(products[i]);
+    }
+}
+
+/*Создайте массив с элементами 1, 2, 3. Выведите на экран
+каждый из этих элементов.
+2. Создайте массив с произвольными элементами.
+Выведите на экран количество элементов в этом
+массиве.
+3. Создайте массив с элементами 'a', 'b', 'c'. Запишите вместо
+первого элемента число 1, вместо второго - 2, вместо
+третьего - 3.*/
+const array = [1, 2, 3];
+console.log(...array);
+
+array.forEach((el, i) => {
+    console.log(`первый аргумент - значение ${el} второй аргумент - индекс ${i}`);
+})
+
+const arrEl = ['a', 'b', 'c'];
+
+arrEl[0] = 1;
+arrEl[1] = 2;
+arrEl[2] = 3;
+console.log(arrEl);
+
+/*Создайте массив с элементами 1, 2 и 3. С помощью оператора ++
+увеличьте каждый элемент массива на единицу.
+2. Узнайте длину следующего массива:
+const arr = [];
+arr[3] = 'a';
+arr[8] = 'b';
+1. Пусть дан такой массив:
+const arr = [1, 2, 3];
+Добавьте ему в конец элементы 4 и 5.
+1. Создайте произвольный массив из 5 элементов, Удалите из него два
+элемента. Проверьте, какое станет значение свойства length после
+этого.*/
+const myArr = [1, 2, 3];
+
+for (let i = 0; i < myArr.length; i++) {
+    myArr[i]++;
+}
+console.log(myArr);
+
+const arr = [1, 2, 3];
+arr.push(4, 5);
+console.log(arr);
+
+const arr1 = [1, 2, 4, 8, 16];
+arr1.splice(3, 5);
+console.log(arr1);
+
+/*С помощью цикла for выведите в консоль числа от 11 до 33.
+2. С помощью цикла for выведите в консоль нечетные числа в
+промежутке от 1 до 99.
+3. С помощью цикла for выведите в консоль числа от 100 до 0.
+4. Дано число num с неким начальным значением. Умножайте его на 3
+столько раз, пока результат умножения не станет больше 1000.
+Какое число получится? Посчитайте количество итераций,
+необходимых для этого.*/
+/*const arrNumber = [];
+
+for (let i = 11; i <= 33; i++) {
+    arrNumber.push(i);
+}
+console.log(arrNumber);
+
+const arrNotEventNum = [];
+/*
+for (let i = 1; i <= 99; i-=2) {
+    arrNotEventNum.push(i);
+}
+console.log(arrNotEventNum);
+
+const arrNumber1 = [];
+for (let i = 0; i <= 100; i++) {
+    arrNumber1.unshift(i);
+}
+console.log(arrNumber1);
+*/
+
+let number = 1;
+let count = 0;
+
+while (number <= 1000) {
+    number *= 3;
+    count++
+}
+console.log(`резльтат ${number}`);
+console.log(`количество итераций ${count}`);
+
+/*Дан массив const arr = [2, 5, 9, 15, 1, 4];
+Выведите в консоль те элементы массива, которые больше 3-х, но
+меньше 10.
+1. Найдите сумму четных чисел от 2 до 100.
+2. Дан массив const = [2, 5, 9, 3, 1, 4];
+Найдите сумму элементов этого массива.
+1. С помощью цикла сформируйте строку '-1-2-3-4-5-6-7-8-9-'.
+2. Дан массив с числами. const = [2, 5, 9, 0, 3, 1, 4]; Запустите цикл,
+который будет по очереди выводить элементы этого массива в
+консоль до тех пор, пока не встретится элемент со значением 0.
+После этого цикл должен завершить свою работу.*/
+const arr2 = [2, 5, 9, 15, 1, 4];
+/*
+for (let i = 0; i < arr2.length; i++) {
+    if (arr2[i] > 3 && arr2[i] < 10) {
+        console.log(arr2[i]);
+    }
+}
+*/
+const res = arr2.filter((el) => el > 3 && el < 10);
+console.log(res);
+
+let sum3 = 0;
+for (let i = 2; i <= 100; i++) {   
+    if (i % 2 === 1) {
+        sum3 += i;
+    }
+}
+console.log(sum3);
+
+const arrConst = [2, 5, 9, 3, 1, 4];
+let sumArrConst = 0;
+
+for (let i = 0; i < arrConst.length; i++) {
+    sumArrConst += arrConst[i];
+}
+console.log(sumArrConst);
+
+const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log('-' + arr3.join('-') + '-');
+
+const arr4 = [2, 5, 9, 0, 3, 1, 4];
+
+for (let i = 0; i < arr4.length; i++) {
+    if (arr4[i] === 0) {
+        break;
+    }
+    console.log(arr4[i]);
+}
+

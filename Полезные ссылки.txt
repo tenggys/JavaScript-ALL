@@ -1,6 +1,7 @@
 Как преобразовывается один тип в другой - https://www.w3schools.com/jsref/jsref_type_conversion.asp
 Строки - https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String
 Числа - https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
-
+Array.prototype.push() - https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+Массив: перебирающие методы - https://learn.javascript.ru/array-iteration
 
 
